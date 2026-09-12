@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>فروشگاه دیجیتال</title>
     <style>
+
+        h1{ color:black; }
         /* --- استایل‌های پنجره جزئیات محصول (Modal) --- */
         .modal-overlay {
             position: fixed;
@@ -12,7 +14,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(237, 80, 80, 0.8);
             backdrop-filter: blur(8px);
             display: none;
             justify-content: center;
@@ -22,14 +24,14 @@
         }
 
         .modal-content {
-            background:#f0f8ff;
+            background: #f06f6f;
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             max-width: 500px;
             width: 100%;
             padding: 2rem;
             position: relative;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 40px rgba(225, 93, 93, 0.5);
             animation: fadeIn 0.3s ease;
         }
 
@@ -42,9 +44,9 @@
             position: absolute;
             top: 15px;
             left: 15px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(234, 107, 107, 0.905);
             border: none;
-            color: #fff;
+            color: #211d1d;
             font-size: 1.2rem;
             width: 32px;
             height: 32px;
@@ -56,8 +58,7 @@
         }
 
         .close-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-            background-color: #ff0000;
+            background: rgb(212, 49, 49);
         }
 
         .modal-img {
@@ -95,7 +96,7 @@
         }
 
         .btn-buy-full {
-            background: #10b981;
+            background: #fa0f0f;
             color: #ffffff;
             border: none;
             padding: 0.8rem 2rem;
@@ -110,7 +111,7 @@
             background: #059669;
         }
         :root {
-            --bg-color: #0f172a;
+            --bg-color: #ec1e1e;
             --card-bg: rgba(30, 41, 59, 0.7);
             --accent-color: #6366f1;
             --accent-hover: #4f46e5;
@@ -127,7 +128,7 @@
         }
 
         body {
-            background-color: var(--bg-color);
+            background-color:#fcf1f1;
             color: var(--text-main);
             min-height: 100vh;
             padding: 2rem 1rem;
@@ -150,7 +151,7 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Nav Tabs */
+        /* منوی دسته بندی محصولات بالای صفحه */
         .tabs-nav {
             display: flex;
             justify-content: center;
@@ -160,8 +161,8 @@
         }
 
         .tab-btn {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background:rgb(216, 21, 21);
+            border: 1px solid rgb(209, 21, 21);
             color: var(--text-muted);
             padding: 0.8rem 1.6rem;
             border-radius: 12px;
@@ -174,7 +175,7 @@
 
         .tab-btn:hover {
             color: var(--text-main);
-            border-color: var(--accent-color);
+            border-color:#ec1b1b;
         }
         ‏        .tab-btn.active {
             background: var(--accent-color);
@@ -183,7 +184,7 @@
             box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
         }
 
-        /* Product Grid */
+        /*بخش ردیف محصولات کنارهم*/
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -191,9 +192,8 @@
         }
 
         .product-card {
-            background: var(--card-bg);
-            background-color:#b22222;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background:rgb(235, 43, 43);
+            border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: 16px;
             padding: 1.2rem;
             display: flex;
@@ -264,7 +264,6 @@
         }
         ‏        .btn-add {
             background: var(--accent-color);
-            background-color: #b22222;
             color: #ffffff;
             border: none;
             padding: 0.6rem 1rem;
@@ -275,10 +274,13 @@
         }
 
         .btn-add:hover {
-            background: var(--accent-hover);
+           background-color: rgb(122, 62, 74);
+            border:none;
+            font-weight:bold;
+            
         }
 
-        /* Tab Content Display Logic */
+        /* مخفی بودن محتوای تب های بالای صفحه */
         .tab-content {
             display: none;
         }
@@ -296,15 +298,15 @@
             <p style="color: var(--text-muted);">جدیدترین محصولات با بهترین قیمت‌ها</p>
         </header>
 
-        <!-- تب‌های بالا -->
+        <!-- تب‌های بالای صفحه-->
         <nav class="tabs-nav">
-            <button class="tab-btn active" onclick="switchTab(event, 'home')">صفحه اصلی (ویژه)</button>
+            <button class="tab-btn active" onclick="switchTab(event, 'home')">شگفت انگیز</button>
             <button class="tab-btn" onclick="switchTab(event, 'pc')">وسایل کامپیوتر</button>
             <button class="tab-btn" onclick="switchTab(event, 'mobile')">موبایل</button>
             <button class="tab-btn" onclick="switchTab(event, 'charger')">شارژر و کابل</button>
         </nav>
 
-        <!-- تب ۱: صفحه اصلی (۴-۵ محصول با تخفیف ۵٪) -->
+        <!-- تب ۱: صفحه اصلی ( شگفت انگیز) -->
         <div id="home" class="tab-content products-grid active">
             
             <div class="product-card">
@@ -322,7 +324,7 @@
 
             <div class="product-card">
              <span class="badge-off">۵٪ OFF</span>
-                <img src="mobile.jpg" class="product-img" alt="گوشی هوشمند">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrNDaXR2ZOvoE78fcHzFeLkIg4zSFE6PKu521zSE58EQ&s=10" class="product-img" alt="گوشی هوشمند">
                 <h3 class="product-title">گوشی هوشمند سامسونگ</h3>
                 <div class="price-container">
                     <div class="price-box">
@@ -334,7 +336,7 @@
             </div>
             <div class="product-card">
             <span class="badge-off">۵٪ OFF</span>
-                <img src="charger.jpg" class="product-img" alt="شارژر سریع">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGvdsroIGc4NjdaHRexZOaXbBdViYiAJsC8-DgxvtSvw&s=10" class="product-img" alt="شارژر سریع">
                 <h3 class="product-title">شارژر ۶۵ وات فاست شارژ</h3>
                 <div class="price-container">
                     <div class="price-box">
@@ -386,7 +388,7 @@
         <!-- تب ۳: موبایل -->
         <div id="mobile" class="tab-content products-grid active">
             <div class="product-card">
-            <img src="mobile.jpg" class="product-img" alt="موبایل">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl3QNM4YMbidV79RlmxzjhvsEcQYqkMrkL4z-VPfsyIg&s=10" class="product-img" alt="موبایل">
             <h3 class="product-title">آیفون ۱۵ پرو</h3>
             <div class="price-container">
                 <span class="current-price">۶۵,۰۰۰,۰۰۰ تومان</span>
@@ -394,7 +396,7 @@
             </div>
         </div>
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500" class="product-img" alt="موبایل">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEf9emU8Vl_hEKilyvG7Oer_AlTJtw3MgzN3aH0lXL2Q&s=10" class="product-img" alt="موبایل">
                 <h3 class="product-title">شیائومی ۱۳ اولترا</h3>
                 <div class="price-container">
                     <span class="current-price">۴۲,۰۰۰,۰۰۰ تومان</span>
@@ -413,7 +415,7 @@
         <!-- تب ۴: شارژر -->
         <div id="charger" class="tab-content products-grid active">
             <div class="product-card">
-            <img src="charger.jpg" class="product-img" alt="شارژر">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg5tNDd8cJV9miNRjaTpBBLOiTqKJY1hbCa-uwg6_p_w&s=10" class="product-img" alt="شارژر">
             <h3 class="product-title">کابل شارژ تایپ سی</h3>
             <div class="price-container">
                 <span class="current-price">۲۵۰,۰۰۰ تومان</span>
@@ -422,7 +424,7 @@
         </div>
         
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1609592424074-128a3818e69c?w=500" class="product-img" alt="پاوربانک">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjr2qA7laRtvyV0Vnd3EOIuLARGlQ-AiJVtWiq06dkyQ&s=10" class="product-img" alt="پاوربانک">
                 <h3 class="product-title">پاوربانک ۲۰,۰۰۰ میلی‌آمپر</h3>
                 <div class="price-container">
                     <span class="current-price">۱,۸۰۰,۰۰۰ تومان</span>
@@ -434,7 +436,7 @@
     </div>
 
     <script>
-        // تابع سوییچ کردن بین تب‌ها
+        // باز شدن تب ها و جابه جا شدن بینشون//
         function switchTab(event, tabId) {
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => content.classList.remove('active'));
